@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- begin SEO -->
+
+    <title>Installing v1.4 (ugopwn) - TWLguide</title>
+
+    <meta name="description" content="A reasonably complete guide to DSi hacking, from stock to homebrew.">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="twlguide">
+    <meta property="og:title" content="twlguide">
+
+    <link rel="canonical" href="https://jerbear64.github.io/twlguide/install-v1.4.html">
+    <meta property="og:url" content="https://jerbear64.github.io/twlguide/install-v1.4.html">
+
+    <meta property="og:description" content="A reasonably complete guide to DSi hacking, from stock to homebrew.">
+
+    <script type="application/ld+json">
+        {
+          "@context" : "http://schema.org",
+          "@type" : "Person",
+          "name" : "jerbear64",
+          "url" : "https://jerbear64.github.io/twlguide/",
+          "sameAs" : null
+        }
+    </script>
+    <!-- end SEO -->
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+
+    <!-- For all browsers -->
+    <link rel="stylesheet" href="https://3ds.guide/assets/css/main.css">
+
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- start custom head snippets -->
+
+    <!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+    <script type="text/javascript">
+        var host = "dsiguide.me";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+            window.location.protocol = "https";
+    </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- end custom head snippets -->
+
+</head>
+
+<body class="layout--splash">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <ul class="visible-links">
+
+                        <li class="masthead__menu-item masthead__menu-item--lg"><a href="index.html">Guide</a></li>
+                        <li class="masthead__menu-item"><a href="credits.html">Credits</a></li>
+
+                    </ul>
+                    <ul class="hidden-links links-menu hidden"></ul>
+                    <!--see deleted language from source for the language stuff... you shouldn't be seeing this. stop messing w/ the source!/-->
+                    <button class="nav-selector" id="toggle-nav"><div class="navicon"></div></button>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!--script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6670011780914577",
+    enable_page_level_ads: true
+  });
+</script-->
+
+    <div id="main" role="main">
+
+        <article class="page" itemscope="" itemtype="http://schema.org/CreativeWork">
+            <meta itemprop="headline" content="Installing v1.4 (ugopwn)">
+
+            <div class="page__inner-wrap">
+
+                <header>
+                    <h1 class="page__title" itemprop="headline">Installing v1.4 (ugopwn)
+                    </h1>
+
+                </header>
+
+                <section class="page__content" itemprop="text">
+
+                    <hr>
+
+                    <div class="notice"><b>If you need help, ask the <a href="https://discord.gg/8X5ddgH">NDS(i)Brew Scene Discord server</a>!</b></div>
+
+                    <div class="notice"><b>If you would like to donate, you can do so through <a href="https://www.paypal.me/jerbear64">PayPal</a>.</b></div>
+
+                    <!--hr>
+        <!--center>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Guide -->
+                    <!--ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6670011780914577"
+            data-ad-slot="2889110246"
+            data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </center-->
+
+                    <hr>
+
+                    <p class="notice--info">We will now install firmware version 1.4, in preparation for RocketLauncher.</p>
+                    <p class="notice--warning">Flipnote Studio must be installed on your DSi system for this to work. Due to ugopwn only being released for USA currently, a United States system is additionally required.
+
+                    </p>
+                    <div class="notice--danger">There is a risk of bricking. Please ensure that all steps are followed correctly, and keep the NAND backup we will create in a safe place.</div>
+
+                    To use the <a href="https://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet</a> links on this page, you will need a torrent client like <a href="http://www.deluge-torrent.org/">Deluge</a>.
+
+                    <h3 id="what-you-need">What you need</h3>
+
+                    <ul>
+                        <li>The latest release of <a href="files/ugopwn.zip">ugopwn</a> </li>
+                        <li>The latest release of <a href="https://github.com/Jimmy-Z/twlnf/releases">twlnf</a></li>
+                        <li>The latest release of <a href="files/dsi_srl_extract.zip">DSi SRL Extractor (with console_id.py)</a> </li>
+                        <li>A twlnf firmware v1.4 installation script for your region (<a href="files/install-1.4-USA.nfs">USA</a> or <a href="files/install-1.4-EUR.nfs">EUR</a>)</li>
+                        <li>The latest release of <a href="https://www.python.org/downloads/">Python 3</a></li>
+
+                        <li>The latest release of <a href="files/NUSDownloader_v19_DSi.zip">NUS Downloader (with sort.py)</a> </li>
+
+                        <li><i class="fa fa-magnet" aria-hidden="true" title="This is a magnet link. Use a torrent client to download the file."></i> - <a href="magnet:?xt=urn:btih:8f3e153c0c1b8944e314a1968e1f181674ece4c1&dn=dsikey.bin&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2ftracker1.wasabii.com.tw%3a6969%2fannounce&tr=http%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=http%3a%2f%2ftracker.tfile.me%2fannounce&tr=http%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=http%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2ftorrent.gresile.org%2fannounce&tr=http%3a%2f%2ftracker.baravik.org%3a6970%2fannounce&tr=http%3a%2f%2ftracker.aletorrenty.pl%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.aletorrenty.pl%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.piratepublic.com%3a1337%2fannounce&tr=udp%3a%2f%2ftorrent.gresille.org%3a80%2fannounce&tr=udp%3a%2f%2ftracker.kicks-ass.net%3a80%2fannounce&tr=udp%3a%2f%2fzer0day.ch%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.internetwarriors.net%3a1337%2fannounce"><code class="highlighter-rouge">dsikey.bin</code></a></li>
+
+                    </ul>
+
+                    <!-- And this is where it ends and goes to the next step-->
+
+                    <h3 id="instructions">Instructions</h3>
+                    <h4 id="section-i---gathering-files">Section I - Gathering the Necessary Files</h4>
+
+                    <ol>
+                        <li>Power on your device.</li>
+                        <li>Go to System Settings &gt; Data Management &gt; System Memory &gt; Flipnote Studio (or any other DSiWare) &gt; Copy &gt; Yes, and then exit to the DSi Menu. <em>(If Data Management isn't appearing, open the DSi Shop, close it, and try again.)</em></li>
+                        <li>Power off your device, and insert the device's SD card into your computer. </li>
+                        <li>Copy <i>the contents of</i> <code class="highlighter-rouge">twlnf.zip</code> to the root of your SD card, and rename twlnf.nds to <code class="highlighter-rouge">boot.nds</code>.</li>
+                        <li>Copy <em>the contents of</em> the "pack" folder from <code class="highlighter-rouge">ugopwn.zip</code> to the root of your SD card. </li>
+                        <li>Copy the twlnf 1.4 installation script for your region to the root of your SD card.</li>
+                        <li>Unzip <code class="highlighter-rouge&quot;">dsi_srl_extract.zip</code> to your computer. Open your SD Card's drive, and navigate to Private &gt; DS &gt; Title. Copy your .bin file to your <code class="highlighter-rouge&quot;">dsi_srl_extract</code> directory. If multiple .bin files are present, only one needs to be copied.</li>
+                        <li>Double-click on <code class="highlighter-rouge">console_id.py</code> to run it. You will now see a console_id.txt file in the directory. <em>(Note: On Unix-based systems (Mac and Linux, for example), <a href="https://www.winehq.org/">WINE</a> is required for this script to run.)</em></li>
+                        <li>Copy <code class="highlighter-rouge">console_id.txt</code> to the root of your SD card.
+                        </li>
+                        <li>Remove the SD card from your computer, and insert it into the SD card slot on your DSi.</li>
+
+                        <li>Power on your DSi, and open Flipnote Studio.</li>
+                        <li>Press "View Flipnote", then "SD Card". </li>
+                        <li>Choose "select folder", then choose "user" instead of "normal".</li>
+                        <li>Open the ugopwn folder.</li>
+                        <li>Click on the note with the red bottom half, then choose "edit".</li>
+                        <li>Once you are on the editing page, click on the flipnote frog icon in the bottom left.</li>
+                        <li>Click on the film roll icon, then choose "copy".</li>
+                        <li>Choose "back", then "exit". </li>
+                        <li>Click on the second note, then choose "edit". </li>
+                        <li>Click on the flipnote frog icon in the bottom left.</li>
+                        <li>Click on the film roll icon.</li>
+                        <li>Click on the single right arrow (the next to last arrow icon) two times. You will see a new frame be created. </li>
+                        <li>Click on the paste button exactly 122 times. </li>
+                        <li>Click the erase button, then the paste button.</li>
+                        <li>You are now in twlnf. When prompted, press (A) to create a NAND backup. This will take a few minutes.</li>
+                        <li>When the NAND backup is finished, press (B) to exit twlnf. This will power off your device.</li>
+                    </ol>
+                    <h4 id="section-ii---nus">Section II - Downloading v1.4 Files</h4>
+                    <ol>
+                        <li>Insert your DSi's SD card into your PC.</li>
+                        <li>Copy <code class="highlighter-rouge">nand.bin</code> to a safe place on your computer. <em>Do not lose this file!</em> It is an essential backup.</li>
+
+                        <li>Place <code class="highlighter-rouge">dsikey.bin</code> in your NUS Downloader folder.</li>
+                        <li>Open <code class="highlighter-rouge">NUS Downloader.exe</code> and check the box that says "Create Decryped Contents (*.app)" <em>(Note: Unix-based systems (Mac and Linux, for example) can run the .exe natively using Mono.)</em></li>
+                        <li>Uncheck the box that says "Keep Enc. Contents".</li>
+                        <li>Select: Database &gt; System (DSi) &gt; System Menu (Launcher) &gt; [Your Region] &gt; v512 </li>
+                        <li>Select "Start NUS Download!"</li>
+                        <li>When done, select: Database &gt; System (DSi) &gt; Nintendo DS Cart Whitelist &gt; All &gt; v256 </li>
+                        <li>Select "Start NUS Download!"</li>
+                        <li>When done, select: Database &gt; System (DSi) &gt; System Settings &gt; [Your Region] &gt; v512 </li>
+                        <li>Select "Start NUS Download!"</li>
+                        <li>When done, select: Database &gt; System (DSi) &gt; Version Data &gt; [Your Region] &gt; v4 (China) </li>
+                        <li>Select "Start NUS Download!"</li>
+                        <li>Exit NUS Downloader, and run <code class=="highlighter-rouge">sort.py</code> to prepare the titles for installation.</li>
+                        <li>You now have a new folder called <code class="highlighter-rouge">title</code> in your NUS Downloader directory. Copy this folder to the root of your SD card.</li>
+                        <li>Unplug your SD card, and insert it in your DSi.</li>
+                    </ol>
+                    <h4 id="section-iii-installing">Section III - Installing System Version 1.4</h4>
+                    <ol>
+                        <li>We are now modifying the DSi NAND directly. Ensure your DSi is plugged in and has a full battery.</li>
+                        <li>Repeat steps 11 - 24 of Section I to run twlnf.</li>
+                        <li>Wait for twlnf to load. When prompted, press (X) to mount the NAND directly. <em>(twlnf does not list this as an option.)</em></li>
+                        <li>Navigate to <code class="highlighter-rouge">install-1.4-(your region).nfs</code>. Press (A) to execute.</li>
+                        <li>twlnf will now verify that all files are in place. When prompted, press (A) to continue.</li>
+                        <li>twlnf is now installing firmware version 1.4 on your DSi. When <code class="highlighter-rouge">execution returned 0</code> appears, the script has finished executing.</li>
+                        <li>Press (SELECT) to quit twlnf, then (A) to confirm. Your DSi will power off.</li>
+                        <li>Power on your DSi, navigate to System Settings, and verify that your system version is now 1.4.</li>
+                    </ol>
+
+                    <p class="notice--primary">This guide is not yet finished. The next section will walk you through permanently installing an entrypoint so that ugopwn is no longer needed. Please bookmark this page and check periodically for updates!</a>
+
+                    </p>
+                </section>
+
+                <footer class="page__meta">
+
+                </footer>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <div class="page__footer">
+        <footer>
+            <!-- start custom footer snippets -->
+            <!-- end custom footer snippets -->
+
+            <!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- begin SEO -->
+
+    <title>Installing v1.4 (ugopwn) - TWLguide</title>
+
+    <meta name="description" content="A reasonably complete guide to DSi hacking, from stock to homebrew.">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="twlguide">
+    <meta property="og:title" content="twlguide">
+
+    <link rel="canonical" href="https://jerbear64.github.io/twlguide/install-v1.4.html">
+    <meta property="og:url" content="https://jerbear64.github.io/twlguide/install-v1.4.html">
+
+    <meta property="og:description" content="A reasonably complete guide to DSi hacking, from stock to homebrew.">
+
+    <script type="application/ld+json">
+        {
+          "@context" : "http://schema.org",
+          "@type" : "Person",
+          "name" : "jerbear64",
+          "url" : "https://jerbear64.github.io/twlguide/",
+          "sameAs" : null
+        }
+    </script>
+    <!-- end SEO -->
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+
+    <!-- For all browsers -->
+    <link rel="stylesheet" href="https://3ds.guide/assets/css/main.css">
+
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- start custom head snippets -->
+
+    <!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+    <script type="text/javascript">
+        var host = "dsiguide.me";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+            window.location.protocol = "https";
+    </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- end custom head snippets -->
+
+</head>
+
+<body class="layout--splash">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <ul class="visible-links">
+
+                        <li class="masthead__menu-item masthead__menu-item--lg"><a href="index.html">Guide</a></li>
+                        <li class="masthead__menu-item"><a href="credits.html">Credits</a></li>
+
+                    </ul>
+                    <ul class="hidden-links links-menu hidden"></ul>
+                    <!--see deleted language from source for the language stuff... you shouldn't be seeing this. stop messing w/ the source!/-->
+                    <button class="nav-selector" id="toggle-nav"><div class="navicon"></div></button>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!--script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6670011780914577",
+    enable_page_level_ads: true
+  });
+</script-->
+
+    <div id="main" role="main">
+
+        <article class="page" itemscope="" itemtype="http://schema.org/CreativeWork">
+            <meta itemprop="headline" content="Installing v1.4 (ugopwn)">
+
+            <div class="page__inner-wrap">
+
+                <header>
+                    <h1 class="page__title" itemprop="headline">Installing v1.4 (ugopwn)
+                    </h1>
+
+                </header>
+
+                <section class="page__content" itemprop="text">
+
+                    <hr>
+
+                    <div class="notice"><b>If you need help, ask the <a href="https://discord.gg/8X5ddgH">NDS(i)Brew Scene Discord server</a>!</b></div>
+
+                    <div class="notice"><b>If you would like to donate, you can do so through <a href="https://www.paypal.me/jerbear64">PayPal</a>.</b></div>
+
+                    <!--hr>
+        <!--center>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Guide -->
+                    <!--ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6670011780914577"
+            data-ad-slot="2889110246"
+            data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </center-->
+
+                    <hr>
+
+                    <p class="notice--info">We will now install firmware version 1.4, in preparation for RocketLauncher.</p>
+                    <p class="notice--warning">Flipnote Studio must be installed on your DSi system for this to work. Due to ugopwn only being released for USA currently, a United States system is additionally required.
+
+                    </p>
+                    <div class="notice--danger">There is a risk of bricking. Please ensure that all steps are followed correctly, and keep the NAND backup we will create in a safe place.</div>
+
+                    To use the <a href="https://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet</a> links on this page, you will need a torrent client like <a href="http://www.deluge-torrent.org/">Deluge</a>.
+
+                    <h3 id="what-you-need">What you need</h3>
+
+                    <ul>
+                        <li>The latest release of <a href="files/ugopwn.zip">ugopwn</a> </li>
+                        <li>The latest release of <a href="https://github.com/Jimmy-Z/twlnf/releases">twlnf</a></li>
+                        <li>The latest release of <a href="files/dsi_srl_extract.zip">DSi SRL Extractor (with console_id.py)</a> </li>
+                        <li>A twlnf firmware v1.4 installation script for your region (<a href="files/install-1.4-USA.nfs">USA</a> or <a href="files/install-1.4-EUR.nfs">EUR</a>)</li>
+                        <li>The latest release of <a href="https://www.python.org/downloads/">Python 3</a></li>
+
+                        <li>The latest release of <a href="files/NUSDownloader_v19_DSi.zip">NUS Downloader (with sort.py)</a> </li>
+
+                        <li><i class="fa fa-magnet" aria-hidden="true" title="This is a magnet link. Use a torrent client to download the file."></i> - <a href="magnet:?xt=urn:btih:8f3e153c0c1b8944e314a1968e1f181674ece4c1&dn=dsikey.bin&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2ftracker1.wasabii.com.tw%3a6969%2fannounce&tr=http%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=http%3a%2f%2ftracker.tfile.me%2fannounce&tr=http%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=http%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2ftorrent.gresile.org%2fannounce&tr=http%3a%2f%2ftracker.baravik.org%3a6970%2fannounce&tr=http%3a%2f%2ftracker.aletorrenty.pl%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.aletorrenty.pl%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.piratepublic.com%3a1337%2fannounce&tr=udp%3a%2f%2ftorrent.gresille.org%3a80%2fannounce&tr=udp%3a%2f%2ftracker.kicks-ass.net%3a80%2fannounce&tr=udp%3a%2f%2fzer0day.ch%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.internetwarriors.net%3a1337%2fannounce"><code class="highlighter-rouge">dsikey.bin</code></a></li>
+
+                    </ul>
+
+                    <!-- And this is where it ends and goes to the next step-->
+
+                    <h3 id="instructions">Instructions</h3>
+                    <h4 id="section-i---gathering-files">Section I - Gathering the Necessary Files</h4>
+
+                    <ol>
+                        <li>Power on your device.</li>
+                        <li>Go to System Settings &gt; Data Management &gt; System Memory &gt; Flipnote Studio (or any other DSiWare) &gt; Copy &gt; Yes, and then exit to the DSi Menu. <em>(If Data Management isn't appearing, open the DSi Shop, close it, and try again.)</em></li>
+                        <li>Power off your device, and insert the device's SD card into your computer. </li>
+                        <li>Copy <i>the contents of</i> <code class="highlighter-rouge">twlnf.zip</code> to the root of your SD card, and rename twlnf.nds to <code class="highlighter-rouge">boot.nds</code>.</li>
+                        <li>Copy <em>the contents of</em> the "pack" folder from <code class="highlighter-rouge">ugopwn.zip</code> to the root of your SD card. </li>
+                        <li>Copy the twlnf 1.4 installation script for your region to the root of your SD card.</li>
+                        <li>Unzip <code class="highlighter-rouge&quot;">dsi_srl_extract.zip</code> to your computer. Open your SD Card's drive, and navigate to Private &gt; DS &gt; Title. Copy your .bin file to your <code class="highlighter-rouge&quot;">dsi_srl_extract</code> directory. If multiple .bin files are present, only one needs to be copied.</li>
+                        <li>Double-click on <code class="highlighter-rouge">console_id.py</code> to run it. You will now see a console_id.txt file in the directory. <em>(Note: On Unix-based systems (Mac and Linux, for example), <a href="https://www.winehq.org/">WINE</a> is required for this script to run.)</em></li>
+                        <li>Copy <code class="highlighter-rouge">console_id.txt</code> to the root of your SD card.
+                        </li>
+                        <li>Remove the SD card from your computer, and insert it into the SD card slot on your DSi.</li>
+
+                        <li>Power on your DSi, and open Flipnote Studio.</li>
+                        <li>Press "View Flipnote", then "SD Card". </li>
+                        <li>Choose "select folder", then choose "user" instead of "normal".</li>
+                        <li>Open the ugopwn folder.</li>
+                        <li>Click on the note with the red bottom half, then choose "edit".</li>
+                        <li>Once you are on the editing page, click on the flipnote frog icon in the bottom left.</li>
+                        <li>Click on the film roll icon, then choose "copy".</li>
+                        <li>Choose "back", then "exit". </li>
+                        <li>Click on the second note, then choose "edit". </li>
+                        <li>Click on the flipnote frog icon in the bottom left.</li>
+                        <li>Click on the film roll icon.</li>
+                        <li>Click on the single right arrow (the next to last arrow icon) two times. You will see a new frame be created. </li>
+                        <li>Click on the paste button exactly 122 times. </li>
+                        <li>Click the erase button, then the paste button.</li>
+                        <li>You are now in twlnf. When prompted, press (A) to create a NAND backup. This will take a few minutes.</li>
+                        <li>When the NAND backup is finished, press (B) to exit twlnf. This will power off your device.</li>
+                    </ol>
+                    <h4 id="section-ii---nus">Section II - Downloading v1.4 Files</h4>
+                    <ol>
+                        <li>Insert your DSi's SD card into your PC.</li>
+                        <li>Copy <code class="highlighter-rouge">nand.bin</code> to a safe place on your computer. <em>Do not lose this file!</em> It is an essential backup.</li>
+
+                        <li>Place <code class="highlighter-rouge">dsikey.bin</code> in your NUS Downloader folder.</li>
+                        <li>Open <code class="highlighter-rouge">NUS Downloader.exe</code> and check the box that says "Create Decryped Contents (*.app)" <em>(Note: Unix-based systems (Mac and Linux, for example) can run the .exe natively using Mono.)</em></li>
+                        <li>Uncheck the box that says "Keep Enc. Contents".</li>
+                        <li>Select: Database &gt; System (DSi) &gt; System Menu (Launcher) &gt; [Your Region] &gt; v512 </li>
+                        <li>Select "Start NUS Download!"</li>
+                        <li>When done, select: Database &gt; System (DSi) &gt; Nintendo DS Cart Whitelist &gt; All &gt; v256 </li>
+                        <li>Select "Start NUS Download!"</li>
+                        <li>When done, select: Database &gt; System (DSi) &gt; System Settings &gt; [Your Region] &gt; v512 </li>
+                        <li>Select "Start NUS Download!"</li>
+                        <li>When done, select: Database &gt; System (DSi) &gt; Version Data &gt; [Your Region] &gt; v4 (China) </li>
+                        <li>Select "Start NUS Download!"</li>
+                        <li>Exit NUS Downloader, and run <code class=="highlighter-rouge">sort.py</code> to prepare the titles for installation.</li>
+                        <li>You now have a new folder called <code class="highlighter-rouge">title</code> in your NUS Downloader directory. Copy this folder to the root of your SD card.</li>
+                        <li>Unplug your SD card, and insert it in your DSi.</li>
+                    </ol>
+                    <h4 id="section-iii-installing">Section III - Installing System Version 1.4</h4>
+                    <ol>
+                        <li>We are now modifying the DSi NAND directly. Ensure your DSi is plugged in and has a full battery.</li>
+                        <li>Repeat steps 11 - 24 of Section I to run twlnf.</li>
+                        <li>Wait for twlnf to load. When prompted, press (X) to mount the NAND directly. <em>(twlnf does not list this as an option.)</em></li>
+                        <li>Navigate to <code class="highlighter-rouge">install-1.4-(your region).nfs</code>. Press (A) to execute.</li>
+                        <li>twlnf will now verify that all files are in place. When prompted, press (A) to continue.</li>
+                        <li>twlnf is now installing firmware version 1.4 on your DSi. When <code class="highlighter-rouge">execution returned 0</code> appears, the script has finished executing.</li>
+                        <li>Press (SELECT) to quit twlnf, then (A) to confirm. Your DSi will power off.</li>
+                        <li>Power on your DSi, navigate to System Settings, and verify that your system version is now 1.4.</li>
+                    </ol>
+
+                    <p class="notice--primary">This guide is not yet finished. The next section will walk you through permanently installing an entrypoint so that ugopwn is no longer needed. Please bookmark this page and check periodically for updates!</a>
+
+                    </p>
+                </section>
+
+                <footer class="page__meta">
+
+                </footer>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <div class="page__footer">
+        <footer>
+            <!-- start custom footer snippets -->
+            <!-- end custom footer snippets -->
+
+            <div class="page__footer-copyright">&copy; 2017 LukeHasAWii, <a href="https://www.dsiguide.me/credits#Developers">Developers</a>, Site Design Plailect - <a href="https://github.com/dsiguide/dsiguide.github.io">Source</a> - <a href="site-navigation">Site Navigation</a>
+        </footer>
+        </div>
+
+        <script src="https://3ds.guide/assets/js/main.min.js"></script>
+
+</body>
+
+</html>
+        </footer>
+        </div>
+
+        <script src="https://3ds.guide/assets/js/main.min.js"></script>
+
+</body>
+
+</html>
