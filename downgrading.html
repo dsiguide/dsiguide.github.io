@@ -224,16 +224,12 @@ THERE IS A HIGH CHANCE OF BRICK WITH THE CURRENT METHOD, UNLESS YOU FOLLOW THESE
   <li>An SDHC (4-32 gigabytes) SD card for your DSi
   <li>The latest release of <a href="https://github.com/dsiguide/dsiguide.github.io/raw/master/files/ugopwn.zip">ugopwn, a DSiWare exploit for Flipnote Studio</a> </li>
   <li>The latest release of <a href="https://mega.nz/#!AzYlHQ4Q!Ok4krwUPXcvPC2f0tgC4W1PA_0SPnTMAVXUFP3GfM3c">fwTool</a></li>
-  <li>The latest release of <a href="https://mh-nexus.de/en/downloads.php?product=HxD">HxD</a> </li>
-  <li>The latest release of <a href="https://github.com/dsiguide/dsiguide.github.io/raw/master/files/dsi_srl_extract.zip">DSi SRL Extractor</a> </li>
   <li>The latest release of <a href="http://problemkaputt.de/gba.htm">No$GBA</a> </li>
-  <li><a href="https://mega.nz/#!FuwTBDTA!H9k5xUYRa_dam6oHpBQNi-pxL4bA4uoGU3xd1ni34h4">Codes.txt</a> </li>
-  <li>The latest release of <a href="https://mega.nz/#!sm4BWKoQ!KgHd58CzKknqmGQO2nicnn-JYcYixB9YZdqQz4Lm-Z8">TWLTool</a> </li>
   <li>The latest release of <a href="https://mega.nz/#!8mZEVTyZ!hMvqWmnjiylYEGAGHfaQOwfKSnQBJX1e5VfBgFJo0vw">NUSDownloader (with dsikey.bin generator)</a> </li>
-  <li>The latest release of <a href="https://www.osforensics.com/tools/mount-disk-images.html">OSFMount</a> </li>
+  <li>The latest release of <a href="https://github.com/ThisIsDaAccount/TempNand/releases/download/1.0/tempNand.zip">TempNand</a> </li>
   <li><a href="magnet:?xt=urn:btih:8f3e153c0c1b8944e314a1968e1f181674ece4c1&dn=dsikey.bin&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2ftracker1.wasabii.com.tw%3a6969%2fannounce&tr=http%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=http%3a%2f%2ftracker.tfile.me%2fannounce&tr=http%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=http%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2ftorrent.gresile.org%2fannounce&tr=http%3a%2f%2ftracker.baravik.org%3a6970%2fannounce&tr=http%3a%2f%2ftracker.aletorrenty.pl%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.aletorrenty.pl%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.piratepublic.com%3a1337%2fannounce&tr=udp%3a%2f%2ftorrent.gresille.org%3a80%2fannounce&tr=udp%3a%2f%2ftracker.kicks-ass.net%3a80%2fannounce&tr=udp%3a%2f%2fzer0day.ch%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.internetwarriors.net%3a1337%2fannounce">dsikey.bin (download torrent client to use magnet link)</a> </li>
-  <li>The <a href="https://github.com/dsiguide/dsiguide.github.io/raw/master/files/dsi%20footer%20template.bin">DSi footer template</a></li>
-</ul>
+  
+  </ul>
 	
  <!--table>
   <!colgroup>
@@ -310,22 +306,9 @@ THERE IS A HIGH CHANCE OF BRICK WITH THE CURRENT METHOD, UNLESS YOU FOLLOW THESE
     <hr>
 
   <li>Plug your SD card from your DSi into your PC</li>
-  <li>Open your SD Card's drive and navigate to Private &gt; DS &gt; Title &gt; 4B475545.bin and drag it to the same directory as <code class="highlighter-rouge">dsi_srl_extract</code>(make sure that you unzipped dsi_srl_extract.zip) </li>
-  <li>Drag <code class="highlighter-rouge">4B475545.bin</code> onto <code class="highlighter-rouge">extract srl.bat</code></li>
-  <li>Wait, and, when prompted, press any key to continue.</li>
-  <li>You should see some new files</li>
-  <li>Open HxD.exe and select the "Open" option</li>
-  <li>Find the file named <code class="highlighter-rouge">OUT.footer</code> (in your dsi_srl_extract folder) and select "Open"</li>
-  <li>You should see two blue lines of numbers and letters, one going up and down, and one going left to right</li>
-  <li>Find the number "00000380" on the up-and-down line, and find "0F" on the left-to-right line. When you look at where they both lead, you should see two characters. Highlight them.</li>
-  <li>Look to the right, and you should see a number that is also highlighted, followed by 15 other numbers below. Save all 16 of those (Not the pairs of letters and numbers!) to a text file to use for later. (This is called your Console ID)</li>
-  <li>Open <code class="highlighter-rouge">CID.bin</code> in HxD (CID.bin is located in a folder of your SD Card with random letters and numbers!)
-  </li><li>Copy all the pairs of letters and numbers and paste it into a text file. (This is your CID, different from Console ID.)</li>
-  <li>Open <code class="highlighter-rouge">Codes.txt</code> and replace "CID Here" and "ConsoleID Here" with your CID and ConsoleID <em>(Make sure to delete the spaces of the CID! DO NOT DELETE THE [BRACKETS].)</em></li>
-  <li>Save Codes.txt</li>
-  <li>Open the directory of your SD Card, the folder with random letters and numbers, and copy <code class="highlighter-rouge">nand_dsi.bin</code> to the folder named twltool-v1.6 (make sure that you unzipped twltool-v1.6.zip)</li>
-  <li>In the folder named twltool-v1.6, press shift and right click in an empty space and select "Open command window here" or "Open Powershell window here." Then paste in Code 1 (from our new Codes.txt) and press Enter</li>
-  <li>When done, you should now have a file named NAND_DEC.bin</li>
+  <li>Find the new folder in your SD card with a name made up of random numbers. </li>
+  <li>Open it and find the nand_dsi.bin file there. Copy it to a safe place on your computer, and if you want, rename it to "clean nand.bin". </li>
+  <li>Download and extract NUSDownloader to its own folder.</li>
   <li>With the DSi key torrent downloaded, place the file named dsikey.bin into the NUSDownloader folder when you finish generating the key.</li>
   <li>Open <code class="highlighter-rouge">NUS Downloader.exe</code> and check the box that says "Create Decryped Contents (*.app)"</li>
   <li>Select: Database &gt; System (DSi) &gt; System Menu (Launcher) &gt; [Your Region] &gt; v512 </li>
@@ -336,52 +319,28 @@ THERE IS A HIGH CHANCE OF BRICK WITH THE CURRENT METHOD, UNLESS YOU FOLLOW THESE
   <li>Select "Start NUS Download!"</li>
   <li>When done, select: Database &gt; System (DSi) &gt; Version Data &gt; [Your Region] &gt; v4 (China) </li>
   <li>Select "Start NUS Download!"</li>
-  <li>Install and open OSFMount</li>
-  <li>Click the "Mount new..." button, followed by the "Image File" tick mark</li>
-  <li>Press the button with the three periods (...) and select NAND_DEC.bin</li>
-  <li>Select "Partition 0" when prompted. This file should be around 200 MB</li>
-  <li>Uncheck the box that says "Read-Only Drive", and press OK</li>
-  <li>Go to the "My Computer" directory, and you should see a new drive. Double-click it</li>
-  <li>Delete anything inside of the "title\0003000f\484e4841\content" directory</li>
-  <li>Open the folder called "titles" in the NUSDownloader_v19_DSi directory of your PC, open the folder named "0003000f484e4841", and open the folder named "256"</li>
-  <li>Copy "00000001.app" and "tmd.256" from the folder you are now in, and paste them in the "title\0003000f\484e4841\content" folder on your new drive in your computer </li>
-  <li>Rename "tmd.256" to "title.tmd."</li>
-  <li>Delete anything inside of the "title\00030017\484e4145\content" directory of the new drive. </li>
-  <li>Open the folder called "titles" in the NUSDownloader_v19_DSi directory of your PC, open the folder named "00030017484e41[XX]", and open the folder named "512"</li>
-  <li>Copy "00000002.app" and "tmd.512" from the folder you are now in, and paste them in the "title\00030017\484e41[XX]\content" folder on your new drive in your computer </li>
-  <li>Rename "tmd.512 to "title.tmd".</li>
-  <!--THIS IS THE THIRD ONE!-->
-  <li>Delete anything inside of the "title\00030015\484e4245\content" directory of the new drive. </li>
-  <li>Open the folder called "titles" in the NUSDownloader_v19_DSi directory of your PC, open the folder named "00030015484e42[XX]", and open the folder named "512"</li>
-  <li>Copy "00000002.app" and "tmd.512" from the folder you are now in, and paste them in the "title\00030015\484e42[XX]\content" folder on your new drive in your computer</li>
-  <li>Rename "tmd.512 to "title.tmd".</li>
-  <li>Delete anything inside of the "title\0003000f\484e4c45\content" directory of the new drive. </li>
-  <li>Open the folder called "titles" in the NUSDownloader_v19_DSi directory of your PC, open the folder named "0003000f484e4c[XX]", and open the folder named "4"</li>
-  <li>Copy "00000004.app" and "tmd.4" from the folder you are now in, and paste them in the "title\0003000f\484e4c[XX]\content" folder on your new drive in your computer</li>
-  <li>Rename "tmd.4" to "title.tmd".</li>
-  <li>Go to your OSFMount window, and press "Dismount". Exit OSFMount.
-  </li><li>In the folder named twltool-v1.6, press shift and right click in an empty space and select "Open command window here" or "Open Powershell Window here", then paste in Code 2 (from our new Codes.txt) and press Enter</li>
-  <li>When it is done, you should see a file named "NAND_ENC.bin" in the "twltool-v1.6" folder</li>
+  <li>Download and extract TempNand.zip to a new folder.</li>
+  <li>Double-click on TempNand.jar to open TempNand.</li>
+  <li>Go to the setup tab and choose "Console ID", then "get Console ID from file". Choose the .bin file you got in the earlier section by dumping flipnote from system settings.</li>
+  <li>Go to the setup tab and choose "CID", then "get CID from file". Choose the CID.bin file you got from fwtool in the earlier section.</li>
+  <li>Go to File, then "Open Encrypted nand". Choose the "nand_dsi.bin" file you got from fwtool in the earlier section.</li>
+  <li>Wait a few seconds for the file to open. The program may appear to freeze up, but please give it time. </li>
+  <li>Once the buttons start working, click on the one labeled "Downgrade to 1.4"</li>
+  <li>Go inside the NUSDownloader folder, and click on the "titles" folder there only once, then select "Open" to select it. </li>
+  <li>Wait one or two seconds, then go to File and choose "Save as". Navigate to where you got the original nand_dsi.bin file and replace it (Don't close TempNand yet).</li>
 	<hr>
   
     <h5 id="section-iii---testing">Section III - Testing Your Downgraded NAND with NO$GBA</h5>
 		<hr>
   <li>Download and extract NO$GBA to a directory.</li>
-  <li>Copy the NAND_ENC.bin file to your NO$GBA directory (make sure you have extracted the NO$GBA archive) and rename it to DSI-1.mmc</li>
+  <li>On TempNand, click File and then "Save for No$GBA". Navigate to the No$GBA folder and save it there with the name "DSI-1.mmc"</li>
   <li>Extract the DSi BIOS files from the "DSi firmware files.zip" archive into the NO$GBA directory</li>
-  <li>Download the DSi footer template file and extract it to the NO$GBA directory. </li>
-  <li>Open it in HxD. </li>
-  <li>Replace the 16 bytes filed with AAs with your CID </li>
-  <li>Replace the 8 bytes filed with BBs with your Console ID, but reversed. This means that if your Console ID starts with the byte 26 and ends with 08, for example, it should now end with 26 and start with 08. </li>
-  <li>After you have inserted your CID and Console ID, highlight and copy the entire footer file.  </li>
-  <li>Open DSi-1.mmc and scroll to the end of the file. At the end of the file, paste in the footer. </li>
-  <li>Save and close DSi-1.mmc and open No$GBA.</li>
+  <li>Close the TempNand window and open No$GBA.</li>
   <li>Go to options and then Emulation setup.</li>
   <li>In the Emulation tab, set “Reset/Startup Entrypoint” to “GBA/NDS BIOS (Nintendo logo)” and NDS Mode Colors to “DSi (retail/16MB)”. Then click Save Now and then OK.</li>
   <li>Go to File, Cartridge Menu (FileName), and then open any .nds file (such as FWTool).</li>
   <li>Your NAND will now be emulated by NO$GBA. Check that your NAND works perfectly</li>
-  <li>If your encrypted NAND works on NO$GBA, then rename the "NAND_ENC.bin" file to nand_dsi.bin (if it asks you to overwrite, you may want to move the other nand_dsi.bin somewhere else and try renaming it again)</li>
-  <li>Move the new nand_dsi.bin to the folder in your SD card with random letters (if it asks to overwrite, simply accept)</li>
+  <li>If your encrypted NAND works on NO$GBA, then continue. If not, restart and find what went wrong!</li>
     <hr>
 
   <h5 id="section-iv---installing">Section IV - Installing Your Downgraded NAND</h5>
