@@ -13,7 +13,7 @@
 
 
 
-<title>HiyaCFW (Flipnotehax) - DSi Guide</title>
+<title>HiyaCFW installation - DSi Guide</title>
 
 
 
@@ -25,11 +25,11 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="DSi Guide">
-<meta property="og:title" content="HiyaCFW (Flipnotehax)">
+<meta property="og:title" content="HiyaCFW installation">
 
 
-  <link rel="canonical" href="https://dsiguide.me/hiyacfw-flipnotehax.html">
-  <meta property="og:url" content="https://dsiguide.me/hiyacfw-flipnotehax.html">
+  <link rel="canonical" href="https://dsiguide.me/hiyacfw-installation.html">
+  <meta property="og:url" content="https://dsiguide.me/hiyacfw-installation.html">
 
 
 
@@ -203,91 +203,70 @@
 
         <hr>
 
+        <p class="notice--info">HiyaCFW installation guide written by Robz8
+
         <p class="notice--info">Make sure to follow the guide closely to ensure that you do everything correctly.
 
 <p class="notice--info">Make sure to download the right files before proceeding with the guide.
 
-<h4 id="what-you-need">What you need</h4>
+<h4 id="what-you-need-pc">What you need (PC)</h4>
 
 <ul>
-  <li>The latest release of Flipnotehax (select from chart below corresponding to your reigon)</a></li>
-  </ul>
-<table>
-  <!colgroup>
-    <col span="1" style="width: 50%;" />
-  </colgroup>
-  <thead>
-    
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center; font-weight: bold;">Releases</td>
-<td style="text-align: center; font-weight: bold;"><a href="/placeholder">Flipnotehax (USA)</a></td>
-<td style="text-align: center; font-weight: bold;"><a href="/placeholder">Flipnotehax (EUR)</a></td>
-<td style="text-align: center; font-weight: bold;"><a href="/placeholder">Flipnotehax (JPN)</a></td>
-</tr>
-  </tbody>
-</table>
-  <ul>
-  <li>An SD Card with at least 128MB of space</li>
-  <li>Flipnote Studio for Nintendo DSi</li>
-  <li>The latest release of <a href="placeholder">RocketLauncher .nds Maker</a></li>
-  <li>The latest release of <a href="placeholder">HiyaCFW</a></li>
-  <!--li>The latest release of <a href="https://dsiguide.me/files/NUSDownloader_v19_DSi.zip">NUSDownloader DSi</li-->
-  <li>The latest release of <a href="placeholder">FWTool</a></li>
-  <li>A Nintendo DS Game Card labelled as NTR (see the picture below to know if you have an NTR-labelled Game Card)</li>
+  <li>Hex editor (<a href="https://mh-nexus.de/en/hxd/">HxD</a> is recommended)</li>
+  <li>An .ips patching program</li>
+  <li><a href="http://winimage.com/">WinImage</a></li>
 </ul>
-<p class="notice--info"><img src="/images/screenshots/NTRMKDS.jpg" alt="" />
-<h4 id="instructions">Instructions</h4>
-<!--li>Obtain the rom file of the NTR cart you have. NOTE: We do not condone piracy.</li>
-  <li>Open <code class="highlighter-rouge">RocketLauncherNDSMaker.exe</code></li-->
-<ol>
-  <li>Power off your device</li>
-  <li>Insert your SD card into your computer</li>
-  <li>Copy <em>the contents of</em> <code class="highlighter-rouge">flipnotehax.zip</code> to the root of your SD card</li>
-  <li>Copy <em>the contents of</em> <code class="highlighter-rouge">HiyaCFW.zip</code> to the root of your SD card and rename<code class="highlighter-rouge"> HiyaCFW.nds</code> to boot.nds</li>
-  <li>Copy <em>the contents of</em> <code class="highlighter-rouge">FWTool.zip</code> to the root of your SD card and rename<code class="highlighter-rouge"> FWTool</code> to 2222.nds</li> 
-  <li>Rename <code class="highlighter-rouge">RocketLauncher.nds</code> to <code class="highlighter-rouge">2222.nds</code> and place the file in the root of your SD</li>
-  <li>Remove the SD card from your computer and insert it into the SD card slot on your DSi</li>
-  <li>Insert your NTR-labelled Game Card</li>
-  <li>Power on your device and open Flipnote Studio</li>
-  <li>Find the folder named <code class="highlighter-rouge">ugopwn</code> and open it</li>
-  <li>Select the first Flipnote and press <code class="highlighter-rouge">Details</code></li>, then <code class="highlighter-rouge">Edit</code>
-  <li>"Copy" the first frame</li>
-  <li>Exit the Flipnote, and proceed to open and edit the second one</li>
-  <li>On the second Flipnote, in the frame menu, press right on the D-Pad (if right handed) or the A button (if left handed)</li>
-  <li>Tap the <code class="highlighter-rouge">Paste</code> button <em>exactly 122 times</em>
-  
-    <!--p class="notice--info"><img src="/images/screenshots/boot9strap-hb-file-layout.png" alt="" /-->
-  </li>
-  <li>Press the <code class="highlighter-rouge">Erase</code> button, followed by the <code class="highlighter-rouge">Paste</code> button.</li>
-  <li>Choose the options to dump <code class="highlighter-rouge">nand_dsi.bin</code> and <code class="highlighter-rouge">CID.bin</code> </li>
-  <li>Power off your device</li>
-  <li>Copy <code class="highlighter-rouge">nand_dsi.bin</code> and <code class="highlighter-rouge">CID.bin</code> to your PC</li>
-  <li>Obtain the ROM file of the NTR cart you have. You can also dump it with a 3DS using GodMode9. NOTE: We do not condone piracy.</li>
-  <li>Open <code class="highlighter-rouge">RocketLauncherNDSMaker.exe</code></li>
-  <li>Follow the on-screen instructions and put the resulting file(s) on your SD Card</li>
-  <li>Rename <code class="highlighter-rouge">RocketLauncher.nds</code> to <code class="highlighter-rouge">2222.nds</code> and choose replace.
-  <li>Once again, power on your device and open Flipnote Studio</li>
-  <li>Find the folder named <code class="highlighter-rouge">ugopwn</code> and open it</li>
-  <li>Select the first Flipnote and press <code class="highlighter-rouge">Details</code></li>, then <code class="highlighter-rouge">Edit</code>
-  <li>"Copy" the first frame</li>
-  <li>Exit the Flipnote, and proceed to open and edit the second one</li>
-  <li>On the second flipnote, in the frame menu, press right on the D-Pad (if right handed) or the A button (if left handed)</li>
-  <li>Tap the <code class="highlighter-rouge">Paste</code> button <em>exactly 122 times</em>
-  
-    <!--p class="notice--info"><img src="/images/screenshots/boot9strap-hb-file-layout.png" alt="" /-->
-  </li>
-  <li>Press the <code class="highlighter-rouge">Erase</code> button, followed by the <code class="highlighter-rouge">Paste</code> button.</li>
-  <li>
-    You should now be running HiyaCFW! You must repeat the Flipnote process every time to start HiyaCFW.
+<h4 id="what-you-need-dsi">What you need (DSi)</h4>
 
-    <!--p class="notice--info"><img src="/images/screenshots/soundhax-welcome.png" alt="" /-->
+<ul>
+  <li><a href="https://github.com/Robz8/hiyaCFW/releases">Latest version of HiyaCFW</a></li>
+  <li>v1.4 of launcher (named "00000002.app")</li>
+  <li>Your regularly used SD card for DSi</li>
+  <li>A 2GB (or lower) SD card to be used for SDNAND (If your regular SD is 2GB or lower, then that'll work too)</li>
+  <li>Your console ID and CID</li>
+  <li><a href="https://problemkaputt.de/gba.htm">Unlaunch</a> installed</li>
+</ul>
+<h4 id="instructions">Instructions</h4>
+<ol>
+  <li>Extract every file in the .7z file, to a HiyaCFW folder on your PC.</li>
+  <li>On your PC, put fwTool from "regularly used SD card" folder, on your regular SD card.</li>
+  <li>Rename <code class="highlighter-rouge">fwtool.nds</code> to <code class="highlighter-rouge">boot.nds</code>.</li>
+  <li>Put your regular SD card in your DSi.</li>
+  <li>Turn on your DSi.</li> 
+  <li>Launch your exploited DSiWare.</li>
+  <li>Dump your NAND using fwTool.</li>
+  <li>After NAND dumping is done, take the SD card out of your DSi, and put it into your PC.</li>
+  <li>Go to the <code class="highlighter-rouge">FW############</code> folder.</li>
+  <li>Copy <code class="highlighter-rouge">nand_dsi.bin</code> to the "for PC" folder, where TWLTool is at.</li>
+  <li>Remove your SD card from your PC.</li>
+  <li>Decrypt your NAND by running this in cmd: <code class="highlighter-rouge">twltool nandcrypt --cid cidhere --consoleid consoleidhere --in "nandpathhere"</code>
+Replace <code class="highlighter-rouge">cidhere</code> with your CID, <code class="highlighter-rouge">consoleidhere</code> with your console ID, and <code class="highlighter-rouge">nandpathhere</code> with the path of your NAND (ex. <code class="highlighter-rouge">C:/NAND folder/nand_dsi.bin</code>).</li>
+  <li>Get the arm7 and arm9 binaries of bootloader, by running this in cmd: <code class="highlighter-rouge">TWLTool boot2 --in "nandpath"</code></li>
+  <li>Move the <code class="highlighter-rouge">arm7.bin</code> and <code class="highlighter-rouge">arm9.bin</code> files to the <code class="highlighter-rouge">bootloader files</code> folder, and make backups of them.</li>
+  <li>Patch both files with their .ips patches.</li>
+  <li>Name them <code class="highlighter-rouge">arm7 (patched).bin</code> and <code class="highlighter-rouge">arm9 (patched).bin</code>.</li>
+  <li>In HxD, open both <code class="highlighter-rouge">arm9 (patched).bin</code> and <code class="highlighter-rouge">bootloader arm9 append to start.bin</code> files.</li>
+  <li>In <code class="highlighter-rouge">bootloader arm9 append to start.bin</code>, copy the bytes, and paste-insert (not paste-write) it into the start of <code class="highlighter-rouge">arm9 (patched).bin</code>.</li>
+  <li>Save <code class="highlighter-rouge">arm9 (patched).bin</code>, and exit HxD.</li>
+  <li>Run the <code class="highlighter-rouge">make bootloader nds.bat</code> file to get your <code class="highlighter-rouge">bootloader.nds</code> file!</li>
+  <li>Grab your SDNAND SD card, and put it into your PC.</li>
+  <li>Place <code class="highlighter-rouge">bootloader.nds</code> on the SD card root.</li>
+  <li>Open <code class="highlighter-rouge">nand_dsi.bin</code> in WinImage, then click OK.</li>
+  <li>Select <code class="highlighter-rouge">Image</code> -> <code class="highlighter-rouge">Extract</code>.</li>
+  <li>Set the SD card root as the path.</li>
+  <li>Set <code class="highlighter-rouge">Extract folders</code> method to <code class="highlighter-rouge">Extract with pathname</code>.</li>
+  <li>Click <code class="highlighter-rouge">OK</code> to extract the NAND contents to your SDNAND! When that's done, exit WinImage.</li>
+  <li>Copy everything in the <code class="highlighter-rouge">for 2GB (or lower) SD card (SDNAND)</code> folder, to the SD root. If it asks you to overwrite any files, click <code class="highlighter-rouge">Yes</code>.</li>
+  <li>Decrypt launcher by running this in cmd: <code class="highlighter-rouge">TWLTool modcrypt --in "path of 00000002.app" --out "path of 00000002_dec.app"</code></li>
+  <li>Patch <code class="highlighter-rouge">00000002_dec.app</code> with <code class="highlighter-rouge">v1.4 Launcher (00000002.app) patch.ips</code>.</li>
+  <li>Copy the patched file to <code class="highlighter-rouge">\title\00030017\484e41xx\content</code> on your SDNAND SD card, and rename it to <code class="highlighter-rouge">00000002.app</code>. (xx varies, depending on region)
+If there's a .app in that folder, with a higher number than 2, delete that .app file. You'll only need "00000002.app", and the .tmd file in that folder.</li>
+  <li>You're all done! Put your SDNAND SD card into your DSi, turn on your DSi, and when you see the HiyaCFW splash for the first time, that means you're now running HiyaCFW!</li>
 </ol>
 
 <hr />
 
-<p class="notice--primary">Continue to <a href="finalizing-setup">Finalizing Setup</a>
+<p class="notice--primary">You're now safe from console bricks, and you are now able to run custom DSiWare from the SD card, by installing it's .tia to the SDNAND! You can now also run blocked flashcards!</a>
 
         
         
