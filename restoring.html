@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class=" js "><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Flashing TempNand backups - DSi Guide</title>
+
+
+
+
+<meta name="description" content="DSi Homebrew Guide">
+
+
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DSi Guide">
+<meta property="og:title" content="Flashing backups">
+
+
+  <link rel="canonical" href="https://dsiguide.me/downgrading/">
+  <meta property="og:url" content="https://dsiguide.me/downgrading/">
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "LukeHasAWii",
+      "url" : "https://dsiguide.me",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://dsiguide.me/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<script type="text/javascript">
+    var host = "dsiguide.me";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://dsiguide.me/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dsiguide.me/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dsiguide.me/favicon-16x16.png">
+<link rel="manifest" href="https://dsiguide.me/manifest.json">
+<link rel="mask-icon" href="https://dsiguide.me/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+  <body class="layout--single" style="margin-bottom: 178px;">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+     <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <ul class="visible-links">
+          
+          
+          
+          
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="/">Guide</a></li>
+		          <li class="masthead__menu-item"><a href="/dsiware-installation">Install DSiWare Backups</a></li>
+          <li class="masthead__menu-item"><a href="/faq">FAQ</a></li>
+          <li class="masthead__menu-item"><a href="/donations">Donations</a></li>
+		  <li class="masthead__menu-item"><a href="/homebrew-downloads">Homebrew Downloads</a></li>
+          <li class="masthead__menu-item"><a href="/credits">Credits</a></li>
+          <li class="masthead__menu-item"><a href="/troubleshooting">Troubleshooting</a></li>
+          <li class="masthead__menu-item"><a href="/site-navigation">Site Navigation</a></li>
+        </ul>
+        <ul class="hidden-links links-menu hidden"></ul>
+	                <li class="masthead__menu-item"><a href="/soon">Uninstall CFW</a></li>
+        <button class="nav-selector" id="toggle-nav"><div class="navicon"></div></button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<!--script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6670011780914577",
+    enable_page_level_ads: true
+  });
+</script-->
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope="" itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Restoring backups">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Testing and Restoring backups (TempNand & NO$GBA)
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+
+        <hr>
+        
+        
+        
+
+        
+          
+<div class="notice"><b>If you need help, ask the <a href="https://discord.gg/w4SKAr8">Nintendo DSiBrew Discord!</a></b></div>
+        
+          
+        <div class="notice"><b>I worked hard on this guide! If you want, you can <a href="https://dsiguide.me/donations">donate</a> through <a href="https://www.paypal.me/lukehasawii/10">PayPal</a> or <a href="bitcoin:126mXsRyQ8qmuqYQ86X3fhTvXL5B3SH877">Bitcoin</a>!</b></div>
+        
+
+        <!--hr>
+
+        <!--center>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Guide -->
+        <!--ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6670011780914577"
+            data-ad-slot="2889110246"
+            data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </center-->
+
+        <hr>
+
+		
+		
+		
+ <!-- So this is where the good stuff goes-->
+ 
+ 
+ 
+ <p class="notice--info">We will now install any modifications you've made on TempNand to your DSi.
+
+</p><p class="notice--warning">You MUST have the Flipnote Studio app on your DSi in order for this to work. Your console must also be a USA region console, due to the limitations of the Flipnote exploit. If your console is a USA region console, its system version should end with the letter "U".
+
+<h4 id="what-you-need">What you need</h4>
+
+<ul>
+  <li>An SDHC (4-32 gigabytes) SD card for your DSi
+  <li>The latest release of <a href="https://github.com/dsiguide/dsiguide.github.io/raw/master/files/ugopwn.zip">ugopwn, a DSiWare exploit for Flipnote Studio</a> </li>
+  <li>The latest release of <a href="https://mega.nz/#!AzYlHQ4Q!Ok4krwUPXcvPC2f0tgC4W1PA_0SPnTMAVXUFP3GfM3c">fwTool</a></li>
+  <li>The latest release of <a href="https://github.com/ThisIsDaAccount/TempNand/releases/latest">TempNand</a> </li>
+  <li>The latest release of <a href="http://problemkaputt.de/gba.htm">No$GBA</a> </li>
+  <li>The <a href="http://emulation.gametechwiki.com/index.php/Emulator_Files#Nintendo_DS">Nintendo DSi BIOS</a></li>
+  
+  
+  </ul>
+	
+ <!--table>
+  <!colgroup>
+    <col span="1" style="width: 20%;" />
+    <col span="1" style="width: 20%;" />
+    <col span="1" style="width: 20%;" />
+  </colgroup>
+  <thead>
+    <tr>
+<th style="text-align: center">DSiWare/Application</th>
+<th style="text-align: center">Publisher</th>
+<th style="text-align: center"> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center; font-weight: bold;">Flipnote Studio</td>
+<td style="text-align: center; font-weight: bold;">Nintendo</td>
+<td style="text-align: center; font-weight: bold;" colspan="2"><a href="/soon">Installing HiyaCFW (Sudokuhax)</a></td>
+</tr><tr>
+<td style="text-align: center; font-weight: bold;">Nintendo DSi Browser</td>
+<td style="text-align: center; font-weight: bold;">Nintendo</td>
+<td style="text-align: center; font-weight: bold;" colspan="2"><a href="/soon">Installing HiyaCFW (DSibrowserhax)</a></td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold;">The Legend of Zelda: Four Swords Anniversary Edition</td>
+<td style="text-align: center; font-weight: bold;">Nintendo</td>
+<td style="text-align: center; font-weight: bold;" colspan="2"><a href="/soon">Installing HiyaCFW (4Swordshax)</a></td>
+</tr><tr>
+<td style="text-align: center; font-weight: bold;">Sudoku</td>
+<td style="text-align: center; font-weight: bold;">Electronic Arts (EA)</td>
+<td style="text-align: center; font-weight: bold;" colspan="2"><a href="/soon">Installing HiyaCFW (Sudokuhax)</a></td>
+</tr><tr>
+<td style="text-align: center; font-weight: bold;">Fieldrunners</td>
+<td style="text-align: center; font-weight: bold;">Subatomic Studios</td>
+<td style="text-align: center; font-weight: bold;" colspan="2"><a href="/soon">Installing HiyaCFW (Fieldrunnerhax)</a></td>
+</tr>
+  </tbody>
+</table-->
+	      
+ <!-- And this is where it ends and goes to the next step-->
+ 
+ <h4 id="instructions">Instructions</h4>
+ 
+<ol>
+
+   <h5 id="section-i---testing">Section I - Testing Your NAND with NO$GBA</h5>
+		<hr>
+  <li>Download and extract NO$GBA to a directory.</li>	
+  <li>Extract the DSi BIOS files into the NO$GBA directory</li>
+  <li>Do any modifications you want to your Nand with TempNand</li>
+  <li>On TempNand, click File and then "Save for No$GBA". Navigate to the No$GBA folder and save it there with the name "DSI-1.mmc"</li>
+  <li>Close the TempNand window and open No$GBA.</li>
+  <li>Go to options and then Emulation setup.</li>
+  <li>In the Emulation tab, set “Reset/Startup Entrypoint” to “GBA/NDS BIOS (Nintendo logo)” and NDS Mode Colors to “DSi (retail/16MB)”. Then click Save Now and then OK.</li>
+  <li>Go to File, Cartridge Menu (FileName), and then open any .nds file.</li>
+  <li>Your NAND will now be emulated by NO$GBA. Check that your NAND works perfectly</li>
+  <li>If your encrypted NAND works on NO$GBA, then continue. If not, restart and find what went wrong!</li>
+  <li>Insert your SD card into your computer if it's not in there already, then go back to TempNand and go to File > Save as</li>
+  <li>Go back to the folder where you got your original nand backup from, and save the new one as nand_dsi.bin, overwriting the old one (You should still have a copy of the original that you saved in the earlier sections). </li>
+  
+    <hr>
+
+  <h5 id="section-ii---installing">Section II - Installing Your NAND</h5>
+    <hr>
+
+   <li>Power off your DSi</li>
+  <li>Insert your SD card into your computer</li>
+  <li>Copy <em>the contents of</em> <code class="highlighter-rouge">FWTool.zip</code> to the root of your SD card and rename<code class="highlighter-rouge"> FWTool.nds</code> to boot.nds</li> 
+  <li>Copy <em>the contents of</em> <code class="highlighter-rouge">the ugopwn zip file</code> to the root of your SD card. </li>
+  <li>Remove the SD card from your computer and insert it into the SD card slot on your DSi</li>
+  <li>Power on your device</li>
+  <li>Go to System Settings &gt; Data Management &gt; Flipnote Studio (if you copy another DSiWare title, note that the .bin name will differ) &gt; Copy &gt; Yes and then exit to the DSi Menu</li>
+  <li>Find the application named "Flipnote Studio" and open it.</li>
+  <li>Choose "view flipnote", then choose "SD card" </li>
+  <li>Choose "select folder", then choose "user" instead of "normal"</li>
+  <li>Open the ugopwn folder</li>
+  <li>Click on the note with the red bottom half, then choose "edit"</li>
+  <li>Once you are on the editing page, click on the flipnote frog icon in the bottom left</li>
+  <li>Click on the film roll icon, then choose "copy"</li>
+  <li>Choose "back", then "exit" </li>
+  <li>Click on the second note, then choose "edit" </li>
+  <li>Click on the flipnote frog icon in the bottom left</li>
+  <li>Click on the film roll icon</li>
+  <li>Click on the single right arrow (the next to last arrow icon) two times. You should see a new frame be created. </li>
+  <li>Now comes the hard part: Click on the paste button exactly 122 times </li>
+  <li>Click the erase button, then the paste button</li>
+  <li>Wait for FWTool to load. If it does not, you may have not renamed FWTool to boot.nds, or you may have clicked "paste" an incorrect number of times. If errors keep persisting, make sure your SD card is SDHC</li>
+  <li>Once in FWTool, select <code class="highlighter-rouge">Restore nand_dsi.bin</code> <em>(This may take a while. DO NOT EXIT FWTool until the restoration is complete.)</em></li>
+  <li>Exit FWTool. You should now have your nand successfully installed on your DSi.
+  
+</li></ol>
+
+       <!--center>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6670011780914577"
+            data-ad-slot="7670623049"
+            data-ad-format="horizontal"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        </center-->
+<p class="notice--primary">Continue to <a href="https://dsiguide.me/hiyacfw-installation">Installing HiyaCFW</a>
+      </p></section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+        
+      </footer>
+
+      
+
+      
+
+    </div>
+
+    
+
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<!-- end custom footer snippets -->
+
+        
+
+
+
+<div class="page__footer-copyright">© 2018 LukeHasAWii, <a href="https://www.dsiguide.me/credits#Developers">Developers</a>, Site Design Plailect - <a href="https://github.com/dsiguide/dsiguide.github.io">Source</a> - <a href="https://dsiguide.me/site-navigation">Site Navigation</a>
+
+      </div></footer>
+    </div>
+
+    <script src="./downgrading_files/main.min.js.download"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+</body></html>
