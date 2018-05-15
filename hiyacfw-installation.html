@@ -203,70 +203,8 @@
 
         <hr>
 
-        <p class="notice--info">HiyaCFW installation guide written by Robz8
+        <p class="notice--info">In order to prevent issues, this guide has been removed. Please follow <a href="http://dsi.cfw.guide/">this</a> guide instead.
 
-        <p class="notice--info">Make sure to follow the guide closely to ensure that you do everything correctly.
-
-<p class="notice--info">Make sure to download the right files before proceeding with the guide.
-
-<h4 id="what-you-need-pc">What you need (PC)</h4>
-
-<ul>
-  <li>Hex editor (<a href="https://mh-nexus.de/en/hxd/">HxD</a> is recommended)</li>
-  <li>An .ips patching program</li>
-  <li><a href="http://winimage.com/">WinImage</a></li>
-</ul>
-<h4 id="what-you-need-dsi">What you need (DSi)</h4>
-
-<ul>
-  <li><a href="https://github.com/Robz8/hiyaCFW/releases">Latest version of HiyaCFW</a></li>
-  <li>v1.4 of launcher (named <code class="highlighter-rouge">00000002.app</code>)</li>
-  <li>Your regularly used SD card for DSi</li>
-  <li>A 2GB (or lower) SD card to be used for SDNAND (If your regular SD is 2GB or lower, then that'll work too)</li>
-  <li>Your console ID and CID</li>
-  <li><a href="https://problemkaputt.de/gba.htm">Unlaunch</a> installed</li>
-</ul>
-<h4 id="instructions">Instructions</h4>
-<ol>
-  <li>Extract every file in the .7z file, to a HiyaCFW folder on your PC.</li>
-  <li>On your PC, put <code class="highlighter-rouge">fwTool.nds</code> from the <code class="highlighter-rouge">regularly used SD card</code> folder, on your regular SD card.</li>
-  <li>Rename <code class="highlighter-rouge">fwtool.nds</code> to <code class="highlighter-rouge">boot.nds</code>.</li>
-  <li>Put your regular SD card in your DSi.</li>
-  <li>Turn on your DSi.</li> 
-  <li>Launch your exploited DSiWare.</li>
-  <li>Dump your NAND using fwTool.</li>
-  <li>After NAND dumping is done, take the SD card out of your DSi, and put it into your PC.</li>
-  <li>Go to the <code class="highlighter-rouge">FW############</code> folder.</li>
-  <li>Copy <code class="highlighter-rouge">nand_dsi.bin</code> to the "for PC" folder, where TWLTool is at.</li>
-  <li>Remove your SD card from your PC.</li>
-  <li>Decrypt your NAND by running this in cmd: <code class="highlighter-rouge">twltool nandcrypt --cid cidhere --consoleid consoleidhere --in "nandpathhere"</code>
-Replace <code class="highlighter-rouge">cidhere</code> with your CID, <code class="highlighter-rouge">consoleidhere</code> with your console ID, and <code class="highlighter-rouge">nandpathhere</code> with the path of your NAND (ex. <code class="highlighter-rouge">C:/NAND folder/nand_dsi.bin</code>).</li>
-  <li>Get the arm7 and arm9 binaries of bootloader, by running this in cmd: <code class="highlighter-rouge">TWLTool boot2 --in "nandpath"</code></li>
-  <li>Move the <code class="highlighter-rouge">arm7.bin</code> and <code class="highlighter-rouge">arm9.bin</code> files to the <code class="highlighter-rouge">bootloader files</code> folder, and make backups of them.</li>
-  <li>Patch both files with their .ips patches.</li>
-  <li>Name them <code class="highlighter-rouge">arm7 (patched).bin</code> and <code class="highlighter-rouge">arm9 (patched).bin</code>.</li>
-  <li>In HxD, open both <code class="highlighter-rouge">arm9 (patched).bin</code> and <code class="highlighter-rouge">bootloader arm9 append to start.bin</code> files.</li>
-  <li>In <code class="highlighter-rouge">bootloader arm9 append to start.bin</code>, copy the bytes, and paste-insert (not paste-write) it into the start of <code class="highlighter-rouge">arm9 (patched).bin</code>.</li>
-  <li>Save <code class="highlighter-rouge">arm9 (patched).bin</code>, and exit HxD.</li>
-  <li>Run the <code class="highlighter-rouge">make bootloader nds.bat</code> file to get your <code class="highlighter-rouge">bootloader.nds</code> file!</li>
-  <li>Grab your SDNAND SD card, and put it into your PC.</li>
-  <li>Place <code class="highlighter-rouge">bootloader.nds</code> on the SD card root.</li>
-  <li>Open <code class="highlighter-rouge">nand_dsi.bin</code> in WinImage, then click OK.</li>
-  <li>Select <code class="highlighter-rouge">Image</code> -> <code class="highlighter-rouge">Extract</code>.</li>
-  <li>Set the SD card root as the path.</li>
-  <li>Set <code class="highlighter-rouge">Extract folders</code> method to <code class="highlighter-rouge">Extract with pathname</code>.</li>
-  <li>Click <code class="highlighter-rouge">OK</code> to extract the NAND contents to your SDNAND! When that's done, exit WinImage.</li>
-  <li>Copy everything in the <code class="highlighter-rouge">for 2GB (or lower) SD card (SDNAND)</code> folder, to the SD root. If it asks you to overwrite any files, click <code class="highlighter-rouge">Yes</code>.</li>
-  <li>Decrypt launcher by running this in cmd: <code class="highlighter-rouge">TWLTool modcrypt --in "path of 00000002.app" --out "path of 00000002_dec.app"</code></li>
-  <li>Patch <code class="highlighter-rouge">00000002_dec.app</code> with <code class="highlighter-rouge">v1.4 Launcher (00000002.app) patch.ips</code>.</li>
-  <li>Copy the patched file to <code class="highlighter-rouge">\title\00030017\484e41xx\content</code> on your SDNAND SD card, and rename it to <code class="highlighter-rouge">00000002.app</code>. (xx varies, depending on region)
-If there's a .app in that folder, with a higher number than 2, delete that .app file. You'll only need "00000002.app", and the .tmd file in that folder.</li>
-  <li>You're all done! Put your SDNAND SD card into your DSi, turn on your DSi, and when you see the HiyaCFW splash for the first time, that means you're now running HiyaCFW!</li>
-</ol>
-
-<hr />
-
-<p class="notice--primary">You're now safe from console bricks, and you are now able to run custom DSiWare from the SD card, by installing it's .tia to the SDNAND! You can now also run blocked flashcards!</a>
 
         
         
